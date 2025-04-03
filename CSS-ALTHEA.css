@@ -1,5 +1,4 @@
-/* styles.css */
-
+/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -14,22 +13,27 @@ body {
     line-height: 1.6;
 }
 
+/* Navigation Bar */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
     background-color: #6f4e37;
-    padding: 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;  /* Smooth transition for navbar */
 }
 
+/* Navigation Links */
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.5rem;
+    transition: transform 0.5s ease-out; /* Smooth transform animation for the navbar */
 }
 
 .nav-links a {
@@ -46,37 +50,42 @@ nav {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+/* Hamburger Menu (Hidden by Default) */
 .menu-toggle {
     display: none;
-    cursor: pointer;
     font-size: 2rem;
     color: #fff;
-    padding: 0.5rem;
+    cursor: pointer;
 }
 
+/* Sections */
 section {
-    padding: 6rem 2rem 2rem;
+    padding: 8rem 2rem 2rem;
     min-height: 100vh;
     border-bottom: 2px solid #d4a373;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .section-content {
     max-width: 1200px;
-    margin: 0 auto;
+    width: 100%;
     background-color: #fff8f0;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Headings */
 h1, h2 {
     color: #6f4e37;
     margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 h1 {
     font-size: 2.5rem;
-    text-align: center;
 }
 
 h2 {
@@ -86,24 +95,62 @@ h2 {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .nav-links {
+        gap: 1rem;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Mobile Screens (iPhone X to iPhone 16 Pro Max) */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
         align-items: center;
+        padding: 1rem;
     }
 
     .menu-toggle {
         display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        z-index: 1001; /* Make sure the toggle stays on top */
     }
 
     .nav-links {
         display: none;
         flex-direction: column;
+        align-items: center;
         gap: 1rem;
+        width: 100%;
         text-align: center;
+        background-color: #6f4e37;
+        padding: 1rem 0;
+        transform: translateY(-100%); /* Initially hidden above the screen */
     }
 
     .nav-links.active {
         display: flex;
+        transform: translateY(0); /* Slide down when active */
+    }
+
+    section {
+        padding: 7rem 1.5rem 2rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
     }
 }
