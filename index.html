@@ -8,6 +8,7 @@
 </head>
 <body>
     <nav>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <ul class="nav-links">
             <li><a href="#home">Homepage & Title</a></li>
             <li><a href="#profiles">Profiles</a></li>
@@ -22,50 +23,49 @@
     <section id="home">
         <div class="section-content">
             <h1>Welcome to My Brown Blog</h1>
-            <!-- Add homepage content here -->
         </div>
     </section>
 
     <section id="profiles">
         <div class="section-content">
             <h2>Profiles</h2>
-            <!-- Add profile content here -->
         </div>
     </section>
 
     <section id="reviews">
         <div class="section-content">
             <h2>Movie Reviews</h2>
-            <!-- Add movie reviews here -->
         </div>
     </section>
 
     <section id="resume">
         <div class="section-content">
             <h2>Resume & Application Papers</h2>
-            <!-- Add resume content here -->
         </div>
     </section>
 
     <section id="activities">
         <div class="section-content">
             <h2>Other Activities</h2>
-            <!-- Add activities content here -->
         </div>
     </section>
 
     <section id="reflection">
         <div class="section-content">
             <h2>Reflection</h2>
-            <!-- Add reflection content here -->
         </div>
     </section>
 
     <section id="message">
         <div class="section-content">
             <h2>Message to the Teacher</h2>
-            <!-- Add message content here -->
         </div>
     </section>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector(".nav-links").classList.toggle("active");
+        }
+    </script>
 </body>
 </html>
